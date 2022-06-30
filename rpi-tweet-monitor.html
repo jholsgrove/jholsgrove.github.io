@@ -85,12 +85,14 @@
             <h2>Contact Me</h2>
             <p>
                 <form action="https://formsubmit.co/eeb951a07410c2fd811a997ab5591856" method="POST">
+                    <input type="hidden" name="_subject" value="New Portfolio submission!">
+                    <input type="hidden" name="_next" value="https://jholsgrove.github.io/thankyou.html">
                     <p>Name:</p>
                     <input class="inputField" type="text" name="name" required> *
                     <p>Email:</p>
-                    <input type="email" name="email" required> * <br />
+                    <input class="inputField" type="email" name="email" required> * <br />
                     <p>Message:</p>
-                    <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea> *<br />
+                    <textarea placeholder="Your Message" class="textAreaField" name="message" rows="5" required></textarea> *<br />
    
                     <button class="button" type="submit">Send</button>
                </form>
