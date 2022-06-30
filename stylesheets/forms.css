@@ -19,3 +19,12 @@
     background-color: #A9A9A9;
     color: #808080;
 }
+
+.inputField {
+    width: 250px;
+    height: 30px;
+}
+
+.textAreaField {
+    width: 250px;
+}

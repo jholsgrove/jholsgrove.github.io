@@ -16,9 +16,7 @@
             <nav>
                 <img class="logo" src="./images/logo-white.png" alt="Justin Holsgrove Logo"/>
                 <ul id="nav-list">
-                    <li><a href="./index.html#projects">🠔 Back</a></li>
-                    <li><a href="#rpi">RPI Project</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="./index.html">🠔 Back</a></li>
                 </ul>
                 <button class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
@@ -26,13 +24,10 @@
             </nav>
             <div class="hero-area">
                 <div class="hero-text">
-                    <h1>RPI Tweet Monitor</h1>
-                    <p>A hardware based project that runs a Node Red flow to scrape twitter for posts with certain hashtags.</p><br />
-
-                    <p>Tweets are ranked by sentiment and an LED traffic light lights up momentarily, depending on the sentiment. The tweet, author and account image is then displayed on a front end. A PI Hat/ Colour LCD screen loops an animated gif.</p><br />
-                    <p>This page is not intended to be a tutorial but rather listing and showing things that are not deployed publicly.</p>
+                    <h1>Thank You</h1>
+                    <p>Your email has been sent successfully.</p><br />
                 <div class="button">
-                    <a href="#rpi">Read On...</a>
+                    <a href="./index.html">Go back</a>
                 </div>
             </div>
 
@@ -54,48 +49,7 @@
 
         </section>
 
-        <section class="subSection" id="rpi">
-            <div class="info">
-                <h2>The Hardware</h2>
-                <ol class="articleUl">
-                    <li><a class="project-link" href="https://uk.rs-online.com/web/p/raspberry-pi/8326274" target="_blank">A Raspberry Pi 2</a></li>
-                    <li><a class="project-link" href="https://shop.pimoroni.com/products/breakout-garden-hat-i2c-spi?variant=27671494950995" target="_blank">Breakout Garden for Raspberry Pi (I2C + SPI)</a></li>
-                    <li><a class="project-link" href="https://shop.pimoroni.com/products/0-96-spi-colour-lcd-160x80-breakout?variant=21414301630547" target="_blank">0.96" SPI Colour LCD (160x80) Breakout</a></li>
-                    <li><a class="project-link" href="https://shop.pimoroni.com/products/pistop-traffic-light-add-on-for-raspberry-pi?variant=25352478599" target="_blank">PiStop - Traffic Light Add-on for Raspberry Pi</a></li>
-                </ol>
 
-                <figure>
-                <img src="./images/real-rpi.png" alt="The Hardware Setup"/>
-                <figcaption>It doesn't fit in its case anymore...</figcaption>
-                </figure>
-                
-                <h2>LCD Display</h2>
-                <img src="./images/hl-logo.gif" alt="The display on the LCD"/>
-
-                <h2>Node Red Flow</h2>
-                <img src="./images/node-red-flow.png" alt="Node Red Flow" />
-
-                <h2>The Frontend</h2>
-                <img src="./images/tweet-front-end.png" alt="Twitter Monitor Front End"/>
-
-                <p><a class="project-link" href="./index.html#projects">🠔 Back to Projects</a></p>
-        </section>
-
-        <footer id="contact">
-            <h2>Contact Me</h2>
-            <p>
-                <form action="https://formsubmit.co/eeb951a07410c2fd811a997ab5591856" method="POST">
-                    <p>Name:</p>
-                    <input class="inputField" type="text" name="name" required> *
-                    <p>Email:</p>
-                    <input type="email" name="email" required> * <br />
-                    <p>Message:</p>
-                    <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea> *<br />
-   
-                    <button class="button" type="submit">Send</button>
-               </form>
-            </p>
-        </footer>
         <script  src="./scripts/app.js"></script>
     </body>
 </html>
