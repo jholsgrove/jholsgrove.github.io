@@ -12,8 +12,17 @@
     </head>
 
     <body>
-        <!--Hero Section?-->
+        <!--Banner Section-->
         <section class="hero">
+
+            <div class="switchContainer">
+                <p class="switchLabel">Dark Mode &nbsp;</p>
+                 <div class="switch">
+                    <div class="flicker"></div>
+                    <div class="moon"></div>
+                 </div>
+            </div>
+
             <nav>
                 <img class="logo" src="./images/logo-white.png" alt="Justin Holsgrove Logo"/>
                 <ul id="nav-list">
@@ -21,10 +30,12 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+
                 <button class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
+
             <div class="hero-area">
                 <div class="hero-text">
                     <h1>Justin Holsgrove</h1>
@@ -79,7 +90,7 @@
                     <p class="subText"><a class="project-link" href="https://github.com/jholsgrove/DiscordBot_ChannelToRole" target="_blank">View here</a></p>
                 </div>
                 <div class="project-card">
-                    <img class="project-image" src="./images/tt-logo.png" alt="Test Techie Logo"/>
+                    <img class="project-image" src="./images/tt-logo.png" alt="Test Techie Logo" id="myImage" />
                     <h3>Tech Blog</h3>
                     <p class="subText">Wordpress Blog about test related stuff. This blog came about to document my thoughts, experiences, experiments and challenges with test automation.</p>
                     <hr />
@@ -144,6 +155,7 @@
             </div>
         </section>
 
+        <!--Footer Section-->
         <footer id="contact">
             <h2>Contact Me</h2>
             <p>
@@ -161,6 +173,6 @@
                </form>
             </p>
         </footer>
-        <script  src="./scripts/app.js"></script>
+        <script src="./scripts/app.js"></script>
     </body>
 </html>

@@ -11,15 +11,24 @@
     </head>
 
     <body>
-        <!--Hero Section?-->
+        <!--Header Section-->
         <section class="hero">
+
+            <div class="switchContainer">
+                <p class="switchLabel">Dark Mode &nbsp;</p>
+                 <div class="switch">
+                    <div class="flicker"></div>
+                    <div class="moon"></div>
+                 </div>
+            </div>
+
             <nav>
                 <img class="logo" src="./images/logo-white.png" alt="Justin Holsgrove Logo"/>
                 <ul id="nav-list">
-                    <li><a href="./index.html#projects">🠔 Back</a></li>
-                    <li><a href="#rpi">RPI Project</a></li>
+                    <li><a href="./index.html"><- Back</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+
                 <button class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -29,8 +38,6 @@
                     <h1>RPI Tweet Monitor</h1>
                     <p>A hardware based project that runs a Node Red flow to scrape twitter for posts with certain hashtags.</p><br />
 
-                    <p>Tweets are ranked by sentiment and an LED traffic light lights up momentarily, depending on the sentiment. The tweet, author and account image is then displayed on a front end. A PI Hat/ Colour LCD screen loops an animated gif.</p><br />
-                    <p>This page is not intended to be a tutorial but rather listing and showing things that are not deployed publicly.</p>
                 <div class="button">
                     <a href="#rpi">Read On...</a>
                 </div>
@@ -56,6 +63,11 @@
 
         <section class="subSection" id="rpi">
             <div class="info">
+                <h2>What it does</h2>
+                <p>Tweets are ranked by sentiment and an LED traffic light lights up momentarily, depending on the sentiment. The tweet, author and account image is then displayed on a front end. A PI Hat/ Colour LCD screen loops an animated gif.</p>
+                <p>The tweets themselves are stored in a MongoDb which feeds the front end, which refreshes itself every few seconds.</p>
+                <p>This page is not intended to be a tutorial but rather listing and showing things that are not deployed publicly.</p>
+
                 <h2>The Hardware</h2>
                 <ol class="articleUl">
                     <li><a class="project-link" href="https://uk.rs-online.com/web/p/raspberry-pi/8326274" target="_blank">A Raspberry Pi 2</a></li>
@@ -78,7 +90,7 @@
                 <h2>The Frontend</h2>
                 <img src="./images/tweet-front-end.png" alt="Twitter Monitor Front End"/>
 
-                <p><a class="project-link" href="./index.html#projects">🠔 Back to Projects</a></p>
+                <p><a class="project-link" href="./index.html#projects"><- Back to Projects</a></p>
         </section>
 
         <footer id="contact">

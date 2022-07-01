@@ -2,20 +2,11 @@
 @import "navigation.css";
 @import "projects.css";
 @import "forms.css";
+@import "darkmode.css";
 
 body {
     font-family: 'Poppins', sans-serif;
-}
-
-section {
-    background-color: #fff;
-}
-
-.hero {
-    background-color: #1C1D25;
-    height: 100vh;
-    color: #fff;
-    font-size: 40px;
+    transition: 0.3s;
 }
 
 footer {
@@ -39,6 +30,23 @@ p {
     margin: 0;
     font-size: 30px;
     font-weight: 300;
+}
+
+hr {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.hero {
+    background-color: #1C1D25;
+    height: 100vh;
+    color: #fff;
+    font-size: 40px;
+    background: url(../images/bg2.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .subText {
@@ -92,11 +100,6 @@ p {
 .mugShot {
     width: 300px;
     border-radius: 150px;
-}
-
-hr {
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 .articleUl {
