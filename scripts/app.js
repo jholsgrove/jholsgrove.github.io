@@ -2,6 +2,7 @@ const hamburgerButton = document.getElementById('hamburger')
 const navList = document.getElementById('nav-list')
 const switchElement = document.querySelector('.switch')
 const img = document.getElementById("myImage");
+const changeAtlasImg = document.getElementById("changeAtlasImage");
 const darkOrLite = false;
 
 function toggleButton() {
@@ -16,6 +17,14 @@ function changeImage(darkOrLite) {
       }
       else{
         img.src = "./images/tt-logo.png";
+      };
+
+      if(darkOrLite === true)
+      {
+        changeAtlasImg.src = "./images/ChangeAtlas-Logo-Dark.png";
+      }
+      else{
+        changeAtlasImg.src = "./images/ChangeAtlas-Logo.png";
       };
 }
 
