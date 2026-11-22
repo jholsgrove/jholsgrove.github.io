@@ -3,6 +3,7 @@ const navList = document.getElementById('nav-list')
 const switchElement = document.querySelector('.switch')
 const img = document.getElementById("myImage");
 const changeAtlasImg = document.getElementById("changeAtlasImage");
+const nearAndThereImg = document.getElementById("nearAndThereImage");
 const darkOrLite = false;
 
 function toggleButton() {
@@ -22,9 +23,11 @@ function changeImage(darkOrLite) {
       if(darkOrLite === true)
       {
         changeAtlasImg.src = "./images/ChangeAtlas-Logo-Dark.png";
+        nearAndThereImg.src = "./images/NearAndThere-Logo-Dark.svg";
       }
       else{
         changeAtlasImg.src = "./images/ChangeAtlas-Logo.png";
+        nearAndThereImg.src = "./images/NearAndThere-Logo.svg";
       };
 }
 
