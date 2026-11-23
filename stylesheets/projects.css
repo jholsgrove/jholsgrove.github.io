@@ -1,26 +1,111 @@
-.project-card{
-    width: 500px;
-    height: 600px;
-    box-shadow: 5px 5px 20px #C2C2C2;
-    margin: 10px;
-    padding: 10px;
-    
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.project-container {
+.group-heading {
+    max-width: 1400px;
+    margin: 4rem auto 1.5rem;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.project-card {
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75rem 1.5rem 1.5rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background-color 0.3s;
 }
 
-@media only screen and (max-width:1000px) {
-    .project-container {
-        display: flex;
-        flex-wrap:wrap;
-    }
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+}
+
+/* Circular frame for project logos. Logos are contained with padding so nothing gets clipped;
+   a card can set --porthole-light / --porthole-dark to match a logo's own background colour. */
+.porthole {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--porthole-light, #ffffff);
+    box-shadow: inset 0 0 0 1px var(--border);
+    transition: background-color 0.3s;
+}
+
+html.dark .porthole {
+    background-color: var(--porthole-dark, #33344a);
 }
 
 .project-image {
-    margin-top: 25px;
-    width: 250px;
-    border-radius: 125px;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* Logos that are already round, or photos, fill the whole frame */
+.porthole--fill .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card .subText {
+    margin-bottom: 0.75rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0.25rem 0 1.25rem;
+    padding: 0;
+    list-style: none;
+}
+
+.tags li {
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.card-link {
+    margin-top: auto;
+    padding-top: 1rem;
+    width: 100%;
+    border-top: 1px solid var(--border);
+    color: var(--link);
+    font-weight: 600;
+}
+
+/* Make the whole card clickable via the main link */
+.card-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+/* ...while keeping inline links in the description clickable on their own */
+.project-card .subText a {
+    position: relative;
+    z-index: 1;
 }

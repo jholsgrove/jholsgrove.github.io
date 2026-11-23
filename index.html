@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-GB">
     <head>
-        <link rel="stylesheet" href="./stylesheets/styles.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Justin Holsgrove - Portfolio</title>
+        <meta name="description" content="Justin Holsgrove, Head of QA and Senior Test Engineer based in West Sussex. Test automation frameworks, side projects and contact details." />
+
+        <!-- Link previews (LinkedIn, Bluesky, Slack etc.) -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jholsgrove.github.io/" />
+        <meta property="og:title" content="Justin Holsgrove - Portfolio" />
+        <meta property="og:description" content="Head of QA and Senior Test Engineer. Test automation frameworks, side projects and contact details." />
+        <meta property="og:image" content="https://jholsgrove.github.io/images/1782728738418.jpg" />
+        <meta name="twitter:card" content="summary" />
+
+        <!-- Apply the saved (or system) theme before first paint to avoid a flash -->
+        <script>
+            try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        </script>
+
+        <link rel="icon" type="image/png" href="./images/favico.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/8ce34b4a0a.js" crossorigin="anonymous"></script>
-        <title>Justin Holsgrove - Portfolio</title>
-        <link rel="icon" type="image/x-icon" href="./images/favico.png">
-        <meta charset="UTF-8" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./stylesheets/styles.css" />
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESZJHTEJ3L"></script>
@@ -22,212 +42,240 @@
     </head>
 
     <body>
-        <!--Banner Section-->
-        <div class="hero">
-            <div class="switchContainer">
-                 <div class="switch">
-                    <div class="flicker"></div>
-                    <div class="moon"></div>
-                 </div>
-            </div>
+        <a class="skip-link" href="#main">Skip to content</a>
 
-            <nav>
-                <img class="logo" src="./images/logo-white.png" alt="Justin Holsgrove Logo"/>
-                <ul id="nav-list">
+        <!--Banner Section-->
+        <header class="hero">
+            <nav aria-label="Main">
+                <img class="logo" src="./images/logo-white.png" alt="Justin Holsgrove Logo" width="257" height="215"/>
+                <ul class="nav-links" id="nav-list">
                     <li><a href="#aboutMe">About Me</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
 
-                <button class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false">
+                    <span class="flicker"></span>
+                    <span class="moon"></span>
+                </button>
+
+                <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-controls="nav-list" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
                 </button>
             </nav>
 
             <div class="hero-area">
                 <div class="hero-text">
                     <h1>Justin Holsgrove</h1>
-                    <p>Software Test Engineer</p>
-                <div class="button">
-                    <a href="#aboutMe">About me</a>
+                    <p>Head of QA &amp; Senior Test Engineer</p>
+                    <a class="button" href="#aboutMe">About me</a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://bsky.app/profile/testtechie.co.uk" class="social" target="_blank" rel="noopener" aria-label="Bluesky">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="50" height="50" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/justin-holsgrove-89454930/" class="social" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="50" height="50" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://github.com/jholsgrove" class="social" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="50" height="50" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://testtechie9.wordpress.com" class="social" target="_blank" rel="noopener" aria-label="Test Techie blog">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="50" height="50" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.597 7.81l4.911 13.454c-3.434-1.668-5.802-5.19-5.802-9.264 0-1.493.32-2.91.891-4.19zm16.352 3.67c0-1.272-.457-2.153-.849-2.839-.521-.849-1.011-1.566-1.011-2.415 0-.978.747-1.88 1.862-1.819-1.831-1.677-4.271-2.701-6.951-2.701-3.596 0-6.76 1.845-8.601 4.64.625.02 1.489.032 3.406-.118.555-.034.62.782.066.847 0 0-.558.065-1.178.098l3.749 11.15 2.253-6.756-1.604-4.394c-.555-.033-1.08-.098-1.08-.098-.555-.033-.49-.881.065-.848 2.212.17 3.271.171 5.455 0 .555-.033.621.783.066.848 0 0-.559.065-1.178.098l3.72 11.065 1.027-3.431c.444-1.423.783-2.446.783-3.327zm-6.768 1.42l-3.089 8.975c.922.271 1.898.419 2.908.419 1.199 0 2.349-.207 3.418-.583-.086-.139-3.181-8.657-3.237-8.811zm8.852-5.839c.224 1.651-.099 3.208-.713 4.746l-3.145 9.091c3.061-1.784 5.119-5.1 5.119-8.898 0-1.79-.457-3.473-1.261-4.939zm2.967 4.939c0 6.617-5.384 12-12 12s-12-5.383-12-12 5.383-12 12-12 12 5.383 12 12zm-.55 0c0-6.313-5.137-11.45-11.45-11.45s-11.45 5.137-11.45 11.45 5.137 11.45 11.45 11.45 11.45-5.137 11.45-11.45z"/></svg>
+                    </a>
                 </div>
             </div>
-            
+        </header>
 
-            <div class="socials">
-                <div><a href="https://bsky.app/profile/testtechie.co.uk" class="social"  target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="50" height="50" viewBox="0 0 24 24"><path d="M12 11.388c-.906-1.761-3.372-5.044-5.665-6.662c-2.197-1.55-3.034-1.283-3.583-1.033C2.116 3.978 2 4.955 2 5.528c0 .575.315 4.709.52 5.4c.68 2.28 3.094 3.05 5.32 2.803c-3.26.483-6.157 1.67-2.36 5.898c4.178 4.325 5.726-.927 6.52-3.59c.794 2.663 1.708 7.726 6.444 3.59c3.556-3.59.977-5.415-2.283-5.898c2.225.247 4.64-.523 5.319-2.803c.205-.69.52-4.825.52-5.399c0-.575-.116-1.55-.752-1.838c-.549-.248-1.386-.517-3.583 1.033c-2.293 1.621-4.76 4.904-5.665 6.664"/></svg>
-                </a></div>
-                <div><a href="https://www.linkedin.com/in/justin-holsgrove-89454930/" class="social"  target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="50" height="50" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a></div>
-                <div><a href="https://github.com/jholsgrove" class="social" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="50" height="50" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a></div>
-                <div><a href="https://testtechie9.wordpress.com" class="social" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="50" height="50" viewBox="0 0 24 24"><path d="M2.597 7.81l4.911 13.454c-3.434-1.668-5.802-5.19-5.802-9.264 0-1.493.32-2.91.891-4.19zm16.352 3.67c0-1.272-.457-2.153-.849-2.839-.521-.849-1.011-1.566-1.011-2.415 0-.978.747-1.88 1.862-1.819-1.831-1.677-4.271-2.701-6.951-2.701-3.596 0-6.76 1.845-8.601 4.64.625.02 1.489.032 3.406-.118.555-.034.62.782.066.847 0 0-.558.065-1.178.098l3.749 11.15 2.253-6.756-1.604-4.394c-.555-.033-1.08-.098-1.08-.098-.555-.033-.49-.881.065-.848 2.212.17 3.271.171 5.455 0 .555-.033.621.783.066.848 0 0-.559.065-1.178.098l3.72 11.065 1.027-3.431c.444-1.423.783-2.446.783-3.327zm-6.768 1.42l-3.089 8.975c.922.271 1.898.419 2.908.419 1.199 0 2.349-.207 3.418-.583-.086-.139-3.181-8.657-3.237-8.811zm8.852-5.839c.224 1.651-.099 3.208-.713 4.746l-3.145 9.091c3.061-1.784 5.119-5.1 5.119-8.898 0-1.79-.457-3.473-1.261-4.939zm2.967 4.939c0 6.617-5.384 12-12 12s-12-5.383-12-12 5.383-12 12-12 12 5.383 12 12zm-.55 0c0-6.313-5.137-11.45-11.45-11.45s-11.45 5.137-11.45 11.45 5.137 11.45 11.45 11.45 11.45-5.137 11.45-11.45z"/></svg>
-                </a></div>
-            </div>
-            </div>
+        <main id="main">
+            <!--About Me-->
+            <section class="subSection" id="aboutMe">
+                <div class="info">
+                    <h2>About Me</h2>
+                    <p>I am a hard working individual based in West Sussex who strives to continually learn. My earlier career has seen me doing front end web design and development, technical recruitment of Engineering personnel for all Engineering &amp; Scientific disciplines as well as conducting Specialist Mapping roles.</p>
+                    <p>I started my testing career in 2013 using Selenium WebDriver with C# .NET and SpecFlow/Gherkin, developing Behaviour Driven Development automated tests of web applications in parallel, using specification by example. I use a variety of tools including but not limited to Visual Studio, TeamCity, NUnit, Blazor, Azure &amp; Git for source control.</p>
+                    <p>I am currently Head of QA | Senior Test Engineer at <a href="https://highlight.net/" class="project-link" target="_blank" rel="noopener">Highlight Service Assurance</a>.</p>
+                </div>
+                <div class="mugShotContainer">
+                    <img class="mugShot" src="./images/1782728738418.jpg" alt="Justin Holsgrove" width="400" height="400"/>
+                </div>
+            </section>
 
-        </div>
+            <!--Projects-->
+            <section class="subSectionAlt" id="projects">
+                <h2>Projects</h2>
 
-        <!--About Me-->
-        <section class="subSection" id="aboutMe">
-            <div class="info">
-                <h2>About Me</h2>
-                <p>I am a hard working individual based in West Sussex who strives to continually learn. My earlier career has seen me doing Front end web design and development, technical recruitment of Engineering personnel for all Engineering & Scientific disciplines as well as conducting Specialist Mapping roles.</p>
-                <br />
-                <p>I started my testing career in 2013 using Selenium Webdriver with C# DotNet, Specflow/ Gherkin for developing Behavioural Driven Development automated tests of web applications in paralell; using specification by design. I use a variety of tools including but not limited to Visual Studio, TeamCity, NUnit, Blazor, Azure & Git for source control.</p>
-                <br />
-                <p>I am currently Head of QA | Senior Test Engineer at <a href="https://highlight.net/" class="project-link" target="_blank">Highlight Service Assurance</a>.</p>
-            </div>
-            <div class="mugShotContainer">
-                <img  class="mugShot" src="./images/1782728738418.jpg" alt="Justin Holsgrove"/>
-            </div>
-        </section>
+                <div class="project-grid">
 
-        <!--Projects-->
-        <section class="subSectionAlt" id="projects">
-            <h2>Projects</h2>
-            <div class="project-container">
+                    <!--Near and There-->
+                    <article class="project-card">
+                        <div class="porthole">
+                            <img class="project-image only-light" src="./images/NearAndThere-Logo.svg" alt="Near and There Logo" width="160" height="160"/>
+                            <img class="project-image only-dark" src="./images/NearAndThere-Logo-Dark.svg" alt="Near and There Logo" width="160" height="160"/>
+                        </div>
+                        <h3>Near and There</h3>
+                        <p class="subText">Your postcode, in plain English: what's on your doorstep right now. Air quality, weather, rivers and sewage spills, food hygiene, next trains and buses, handy places nearby and recent wildlife sightings, all from open data.</p>
+                        <ul class="tags" aria-label="Technologies"><li>Next.js</li><li>TypeScript</li><li>Open data</li></ul>
+                        <a class="card-link" href="https://nearandthere.co.uk/" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
 
-                <!--Near and There-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/NearAndThere-Logo.svg" alt="Near and There Logo" id="nearAndThereImage"/>
-                    <h3>Near and There</h3>
-                    <p class="subText">Your postcode, in plain English: what's on your doorstep right now. Air quality, weather, rivers and sewage spills, food hygiene, next trains and buses, handy places nearby and recent wildlife sightings, all from open data. Next.js & TypeScript.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://nearandthere.co.uk/" target="_blank">View here</a></p>
+                    <!--ChangeAtlas-->
+                    <article class="project-card">
+                        <div class="porthole" style="--porthole-light: #fefefe; --porthole-dark: #010617">
+                            <img class="project-image only-light" src="./images/ChangeAtlas-Logo.png" alt="ChangeAtlas Logo" width="160" height="160"/>
+                            <img class="project-image only-dark" src="./images/ChangeAtlas-Logo-Dark.png" alt="ChangeAtlas Logo" width="160" height="160"/>
+                        </div>
+                        <h3>ChangeAtlas</h3>
+                        <p class="subText">Turns a release's tracker query into a shaded map of your software system. An AI-generated system graph is overlaid with release data, showing change impact as colour-coded weather on your architecture. Zero dependencies.</p>
+                        <ul class="tags" aria-label="Technologies"><li>Python</li><li>AI</li><li>Release risk</li></ul>
+                        <a class="card-link" href="https://github.com/jholsgrove/ChangeAtlas" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
+                    <!--SurveyorSmart-->
+                    <article class="project-card">
+                        <div class="porthole">
+                            <img class="project-image only-light" src="./images/SurveyorSmartLogo.png" alt="SurveyorSmart Logo" width="160" height="160" loading="lazy"/>
+                            <img class="project-image only-dark" src="./images/SurveyorSmartLogo-Dark.png" alt="SurveyorSmart Logo" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>SurveyorSmart</h3>
+                        <p class="subText">A tool for assisting Surveyors with building reports. Customise and generate PDF reports with ease, and get in-app assistance from Claude Opus.</p>
+                        <ul class="tags" aria-label="Technologies"><li>Claude</li><li>PDF reports</li><li>SaaS</li></ul>
+                        <a class="card-link" href="https://www.surveyorsmart.co.uk/" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
+                    <!--Owl Hooter-->
+                    <article class="project-card">
+                        <div class="porthole porthole--fill">
+                            <img class="project-image" src="./images/logo-oh.png" alt="OwlHooter Logo" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>OwlHooter</h3>
+                        <p class="subText">Scare mice off in hard to reach areas. A Raspberry Pi mouse deterrent. It plays owl calls through a speaker at unpredictable intervals overnight, exploiting the fear response mice have to their main natural predator. Got to be better than those ultrasonic things!</p>
+                        <ul class="tags" aria-label="Technologies"><li>Raspberry Pi</li><li>Hardware</li></ul>
+                        <a class="card-link" href="https://github.com/jholsgrove/OwlHooter" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
                 </div>
 
-                <!--Owl Hooter-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/logo-oh.png" alt="OwlHooter Logo" id="owlHooterImage"/>
-                    <h3>OwlHooter</h3>
-                    <p class="subText">Scare mice off in hard to reach areas. A Raspberry Pi mouse deterrent. It plays owl calls through a speaker at unpredictable intervals overnight, exploiting the fear response mice have to their main natural predator. Got to be better than those ultrasonic things!</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://github.com/jholsgrove/OwlHooter" target="_blank">View here</a></p>
+                <h3 class="group-heading">More projects</h3>
+
+                <div class="project-grid">
+
+                    <!--Selenium Test Framework-->
+                    <article class="project-card">
+                        <div class="porthole" style="--porthole-light: #cf0a2c; --porthole-dark: #cf0a2c">
+                            <img class="project-image" src="./images/seWebdriver.png" alt="Selenium WebDriver" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>Base Selenium Test Framework</h3>
+                        <p class="subText">A test framework in C# for Selenium and API based Setup/Teardown &amp; Testing. Highly extensible.</p>
+                        <ul class="tags" aria-label="Technologies"><li>C#</li><li>Selenium</li><li>API testing</li></ul>
+                        <a class="card-link" href="https://github.com/jholsgrove/BaseSeleniumTestFramework" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
+                    <!--Playwright Test Framework-->
+                    <article class="project-card">
+                        <div class="porthole porthole--fill">
+                            <img class="project-image" src="./images/msPlaywright.png" alt="Microsoft Playwright" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>Base Playwright Test Framework</h3>
+                        <p class="subText">A test framework in C# for Playwright and API based Setup/Teardown &amp; Testing. Highly extensible.</p>
+                        <ul class="tags" aria-label="Technologies"><li>C#</li><li>Playwright</li><li>API testing</li></ul>
+                        <a class="card-link" href="https://github.com/jholsgrove/BasePlaywrightTestFramework" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
+                    <!--REST API-->
+                    <article class="project-card">
+                        <div class="porthole">
+                            <img class="project-image" src="./images/Microsoft_Azure.svg.png" alt="Microsoft Azure Logo" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>In Memory REST API</h3>
+                        <p class="subText">An in memory REST API that acts as the system under test for the Selenium &amp; Playwright Test framework projects, deployed in Azure. Made following <a class="project-link" href="https://www.youtube.com/watch?v=ZXdFisA_hOY" target="_blank" rel="noopener">this great video</a>.</p>
+                        <ul class="tags" aria-label="Technologies"><li>.NET</li><li>REST</li><li>Azure</li></ul>
+                        <a class="card-link" href="https://github.com/jholsgrove/CatalogApi" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
+                    <!--Goatfolio-->
+                    <article class="project-card">
+                        <div class="porthole porthole--fill">
+                            <img class="project-image" src="./images/stonk.jpg" alt="Stonks" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>Goatfolio</h3>
+                        <p class="subText">A simple stock portfolio app made with Blazor .NET 5.0, Entity Framework Core &amp; .NET Identity - a project for learning and a bit of fun. Stock information is retrieved by calling the free version of the <a class="project-link" href="https://www.alphavantage.co/" target="_blank" rel="noopener">AlphaVantage API</a>.</p>
+                        <ul class="tags" aria-label="Technologies"><li>Blazor</li><li>EF Core</li><li>.NET 5</li></ul>
+                        <a class="card-link" href="https://github.com/jholsgrove/goatfolio" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
+                    <!--Discord Bot-->
+                    <article class="project-card">
+                        <div class="porthole">
+                            <img class="project-image" src="./images/Hedonismbot.png" alt="Discord Bot Logo - Hedonism Bot" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>Channel to Role Discord Bot</h3>
+                        <p class="subText">A bot for Discord written in C# that takes all of your channel names and creates Roles for users based on the name of the channel.</p>
+                        <ul class="tags" aria-label="Technologies"><li>C#</li><li>Discord</li></ul>
+                        <a class="card-link" href="https://github.com/jholsgrove/DiscordBot_ChannelToRole" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
+                    <!--Tech Blog-->
+                    <article class="project-card">
+                        <div class="porthole">
+                            <img class="project-image only-light" src="./images/tt-logo.png" alt="Test Techie Logo" width="160" height="160" loading="lazy"/>
+                            <img class="project-image only-dark" src="./images/tt-logo-Dark.png" alt="Test Techie Logo" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>Tech Blog</h3>
+                        <p class="subText">WordPress blog about test related stuff. This blog came about to document my thoughts, experiences, experiments and challenges with test automation.</p>
+                        <ul class="tags" aria-label="Technologies"><li>WordPress</li><li>Writing</li></ul>
+                        <a class="card-link" href="https://testtechie9.wordpress.com" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
+                    <!--Raspberry Pi-->
+                    <article class="project-card">
+                        <div class="porthole">
+                            <img class="project-image only-light" src="./images/pi_logo.png" alt="Raspberry Pi Logo" width="160" height="160" loading="lazy"/>
+                            <img class="project-image only-dark" src="./images/pi_logo-transparent.png" alt="Raspberry Pi Logo" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>Raspberry Pi Tweet Monitor</h3>
+                        <p class="subText">A hardware based project that runs a Node-RED flow to scrape Twitter for posts with certain hashtags. Bonus flashiness with an LCD screen and traffic light.</p>
+                        <ul class="tags" aria-label="Technologies"><li>Raspberry Pi</li><li>Node-RED</li><li>MongoDB</li></ul>
+                        <a class="card-link" href="rpi-tweet-monitor.html">View project &rarr;</a>
+                    </article>
+
+                    <!--Candy Crush-->
+                    <article class="project-card">
+                        <div class="porthole">
+                            <img class="project-image" src="./images/hl-cc.png" alt="Highlight Candy Crush" width="160" height="160" loading="lazy"/>
+                        </div>
+                        <h3>Highlight Candy Crush</h3>
+                        <p class="subText">A bit of fun following tutorials from <a class="project-link" href="https://github.com/kubowania" target="_blank" rel="noopener">Ania Kubow</a>. Much like the page you're reading now.</p>
+                        <ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>Game</li></ul>
+                        <a class="card-link" href="https://highlightcandycrush.netlify.app/" target="_blank" rel="noopener">View project &rarr;</a>
+                    </article>
+
                 </div>
-
-                <!--ChangeAtlas-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/ChangeAtlas-Logo.png" alt="ChangeAtlas Logo" id="changeAtlasImage"/>
-                    <h3>ChangeAtlas</h3>
-                    <p class="subText">Turns a release's tracker query into a shaded map of your software system. An AI-generated system graph is overlaid with release data, showing change impact as colour-coded weather on your architecture. Python, zero dependencies.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://github.com/jholsgrove/ChangeAtlas" target="_blank">View here</a></p>
-                </div>
-
-                <!--SurveyorSmart Bot-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/SurveyorSmartLogo.png" alt="SurveyorSmart Logo"/>
-                    <h3>SurveyorSmart</h3>
-                    <p class="subText">A tool for assisting Surveyors with building reports. Customise and generate PDF reports with ease, get in app assitance with Claude Opus.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://www.surveyorsmart.co.uk/" target="_blank">View here</a></p>
-                </div>
-                                
-            </div>
-            <div class="project-container">
-
-                <!--Selenium Test Framwork-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/seWebdriver.png" alt="Selenium Webdriver"/>
-                    <h3>Base Selenium Test Framework</h3>
-                    <p class="subText">A test framework in C# for Selenium and API based Setup/ Teardown & Testing. Highly extensible.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://github.com/jholsgrove/BaseSeleniumTestFramework" target="_blank">View here</a></p>
-                </div>
-
-                <!--Playwright Test Framework-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/msPlaywright.png" alt="Microsoft Playwright"/>
-                    <h3>Base Playwright Test Framework</h3>
-                    <p class="subText">A test framework in C# for Playwright and API based Setup/ Teardown & Testing. Highly extensible.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://github.com/jholsgrove/BasePlaywrightTestFramework" target="_blank">View here</a></p>
-                </div>
-
-                <!--REST API-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/Microsoft_Azure.svg.png" alt="Rest API"/>
-                    <h3>In Memory REST API</h3>
-                    <p class="subText">An in memory REST API that acts as the system under test for the Selenium & Playwright Test framework projects, deployed in Azure. Made following <a class="project-link" href="https://www.youtube.com/watch?v=ZXdFisA_hOY" target="_blank">this great video</a>.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://github.com/jholsgrove/CatalogApi" target="_blank">View here</a></p>
-                </div>
-
-                <!--Stonks-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/stonk.jpg" alt="Stonks"/>
-                    <h3>Goatfolio</h3>
-                    <p class="subText">A simple stock portfolio app made with Blazor dotnet 5.0, EntityFramework Core & dotnet Identity - a project for learning and a bit of fun.</p><br />
-
-                    <p class="subText">Stock information is retrieved by calling the free version of the <a class="project-link" href="https://www.alphavantage.co/"  target="_blank">AlphaVantage API</a>.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://github.com/jholsgrove/goatfolio" target="_blank">View here</a></p>
-                </div>
-                                
-            </div>
-
-            <div class="project-container">
-
-                <!--Discord Bot-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/Hedonismbot.png" alt="Discord Bot Logo - Hedonism Bot"/>
-                    <h3>Channel to Role Discord Bot</h3>
-                    <p class="subText">A bot for Discord written in C# that takes all of your channel names and creates Roles for users based on the name of the channel.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://github.com/jholsgrove/DiscordBot_ChannelToRole" target="_blank">View here</a></p>
-                </div>
-
-                <!--Tech Blog-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/tt-logo.png" alt="Test Techie Logo" id="myImage" />
-                    <h3>Tech Blog</h3>
-                    <p class="subText">Wordpress Blog about test related stuff. This blog came about to document my thoughts, experiences, experiments and challenges with test automation.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://testtechie9.wordpress.com" target="_blank">View here</a></p>
-                </div>
-
-                <!--Raspberry Pi-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/pi_logo.png" alt="Raspberry Pi Logo"/>
-                    <h3>Raspberry Pi Tweet Monitor</h3>
-                    <p class="subText">A hardware based project that runs a Node Red flow to scrape twitter for posts with certain hashtags.</p><br />
-                    <p class="subText">Bonus flashiness with an LCD screen and traffic light.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="rpi-tweet-monitor.html">View here</a></p>
-                </div>
-
-                <!--Candy Crush-->
-                <div class="project-card">
-                    <img class="project-image" src="./images/hl-cc.png" alt="Highlight Candy Crush"/>
-                    <h3>Highlight Candy Crush</h3>
-                    <p class="subText">A bit of fun following tutorials from <a class="project-link" href="https://github.com/kubowania" target="_blank">Ania Kubow</a>. Much like the page you're reading  now.</p>
-                    <hr />
-                    <p class="subText"><a class="project-link" href="https://highlightcandycrush.netlify.app/" target="_blank">View here</a></p>
-                </div>
-
-            </div>
-        </section>
+            </section>
+        </main>
 
         <!--Footer Section-->
         <footer id="contact">
             <h2>Contact Me</h2>
-                <form action="https://formsubmit.co/eeb951a07410c2fd811a997ab5591856" method="POST">
-                    <input type="hidden" name="_subject" value="New Portfolio submission!">
-                    <input type="hidden" name="_next" value="https://jholsgrove.github.io/thankyou.html">
-                    <p>Name:</p>
-                    <input class="inputField" type="text" name="name" required> *
-                    <p>Email:</p>
-                    <input class="inputField" type="email" name="email" required> * <br />
-                    <p>Message:</p>
-                    <textarea placeholder="Your Message" class="textAreaField" name="message" rows="5" required></textarea> *<br />
-   
-                    <button class="button" type="submit">Send</button>
-               </form>
+            <p class="contact-intro">Got a question, an idea or just want to say hello? Drop me a message.</p>
+            <form class="contact-form" action="https://formsubmit.co/eeb951a07410c2fd811a997ab5591856" method="POST">
+                <input type="hidden" name="_subject" value="New Portfolio submission!">
+                <input type="hidden" name="_next" value="https://jholsgrove.github.io/thankyou.html">
+                <div>
+                    <label for="contact-name">Name <span class="required" aria-hidden="true">*</span></label>
+                    <input class="inputField" id="contact-name" type="text" name="name" autocomplete="name" required>
+                </div>
+                <div>
+                    <label for="contact-email">Email <span class="required" aria-hidden="true">*</span></label>
+                    <input class="inputField" id="contact-email" type="email" name="email" autocomplete="email" required>
+                </div>
+                <div>
+                    <label for="contact-message">Message <span class="required" aria-hidden="true">*</span></label>
+                    <textarea class="textAreaField" id="contact-message" name="message" rows="5" placeholder="Your message" required></textarea>
+                </div>
+                <button class="button" type="submit">Send</button>
+            </form>
         </footer>
         <script src="./scripts/app.js"></script>
     </body>

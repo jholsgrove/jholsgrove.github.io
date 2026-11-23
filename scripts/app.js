@@ -1,39 +1,50 @@
-const hamburgerButton = document.getElementById('hamburger')
-const navList = document.getElementById('nav-list')
-const switchElement = document.querySelector('.switch')
-const img = document.getElementById("myImage");
-const changeAtlasImg = document.getElementById("changeAtlasImage");
-const nearAndThereImg = document.getElementById("nearAndThereImage");
-const darkOrLite = false;
+(function () {
+    const root = document.documentElement
+    const hamburger = document.getElementById('hamburger')
+    const navList = document.getElementById('nav-list')
+    const themeToggle = document.getElementById('theme-toggle')
 
-function toggleButton() {
+    // Mobile menu
+    if (hamburger && navList) {
+        const setOpen = (open) => {
+            navList.classList.toggle('show', open)
+            hamburger.setAttribute('aria-expanded', String(open))
+        }
 
-    navList.classList.toggle('show')
-}
+        hamburger.addEventListener('click', () => setOpen(!navList.classList.contains('show')))
 
-function changeImage(darkOrLite) {
-      if(img.src !="./images/logo-white.png" && darkOrLite === true)
-      {
-        img.src = "./images/logo-white.png";
-      }
-      else{
-        img.src = "./images/tt-logo.png";
-      };
+        // Close the menu after following a link
+        navList.addEventListener('click', (e) => {
+            if (e.target.closest('a')) setOpen(false)
+        })
+    }
 
-      if(darkOrLite === true)
-      {
-        changeAtlasImg.src = "./images/ChangeAtlas-Logo-Dark.png";
-        nearAndThereImg.src = "./images/NearAndThere-Logo-Dark.svg";
-      }
-      else{
-        changeAtlasImg.src = "./images/ChangeAtlas-Logo.png";
-        nearAndThereImg.src = "./images/NearAndThere-Logo.svg";
-      };
-}
+    // Dark mode. The initial class is applied by the inline script in <head> to avoid a flash.
+    const applyTheme = (dark) => {
+        root.classList.toggle('dark', dark)
+        if (themeToggle) themeToggle.setAttribute('aria-pressed', String(dark))
+    }
 
-hamburgerButton.addEventListener('click', toggleButton)
+    const savedTheme = () => {
+        try { return localStorage.getItem('theme') } catch (e) { return null }
+    }
 
-switchElement.addEventListener('click', () => {
-    const darkOrLite = document.body.classList.toggle('dark')
-  changeImage(darkOrLite)
-})
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', String(root.classList.contains('dark')))
+        themeToggle.addEventListener('click', () => {
+            const dark = !root.classList.contains('dark')
+            applyTheme(dark)
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light') } catch (e) { /* storage unavailable */ }
+        })
+    }
+
+    // Follow system theme changes unless the visitor has made an explicit choice
+    if (window.matchMedia) {
+        const query = window.matchMedia('(prefers-color-scheme: dark)')
+        if (query.addEventListener) {
+            query.addEventListener('change', (e) => {
+                if (!savedTheme()) applyTheme(e.matches)
+            })
+        }
+    }
+})()
