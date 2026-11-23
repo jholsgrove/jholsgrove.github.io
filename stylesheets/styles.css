@@ -58,9 +58,15 @@ p {
 }
 
 :focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--focus);
     outline-offset: 3px;
     border-radius: 4px;
+}
+
+/* The hero and footer are dark in both themes, so use the brighter ring there */
+.hero :focus-visible,
+footer :focus-visible {
+    outline-color: #ef744b;
 }
 
 .skip-link {

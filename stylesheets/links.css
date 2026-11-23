@@ -25,7 +25,7 @@ footer .project-link {
     padding: 0.8rem 2.2rem;
     border: 0;
     border-radius: 999px;
-    background-color: #cf5626;
+    background-color: #b84a1d;
     color: #fff;
     font-family: inherit;
     font-size: 1.15rem;
@@ -36,9 +36,9 @@ footer .project-link {
 }
 
 .button:hover {
-    background-color: #b84a1d;
+    background-color: #9a3d17;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(207, 86, 38, 0.35);
+    box-shadow: 0 8px 20px rgba(184, 74, 29, 0.35);
 }
 
 .button:active {
